@@ -35,12 +35,16 @@ function init() {
 function updateClock() {
     const now = new Date();
     
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    timeDisplay.textContent = `${hours}:${minutes}`;
+    if (timeDisplay) {
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        timeDisplay.textContent = `${hours}:${minutes}`;
+    }
     
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    dateDisplay.textContent = now.toLocaleDateString(undefined, options);
+    if (dateDisplay) {
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        dateDisplay.textContent = now.toLocaleDateString(undefined, options);
+    }
 }
 
 // Wake Lock Functionality

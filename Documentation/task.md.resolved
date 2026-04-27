@@ -1,0 +1,9 @@
+# Task Plan: No Sleep Web App
+
+- [x] Initialize project structure (index.html, styles.css, script.js)
+- [x] Implement foundational UI layout in HTML
+- [x] Apply premium aesthetic styling (dark mode, gradients, micro-animations) in CSS
+- [x] Implement Screen Wake Lock API logic in JS
+- [x] Add live digital clock and status indicator
+- [x] Integrate user interactivity (Toggle button)
+- [x] Verify functionality via browser testing

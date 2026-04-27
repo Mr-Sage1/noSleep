@@ -1,0 +1,17 @@
+# No Sleep Web App Built
+
+The single-page web app has been successfully built and placed in the Sagesleeper directory on your Desktop.
+
+## Features Implemented
+- **Screen Wake Lock**: Uses the native browser `navigator.wakeLock.request('screen')` API to keep your screen continuously awake.
+- **Micro-Animations & UI**: Styled with modern CSS "glassmorphism", dynamic rotating background glows, and toggle-state animations for physical feedback.
+- **Live Clock**: Shows the exact current time and date so the app is useful even while resting on a monitor.
+- **Re-acquire behavior**: Automatically reacquires the lock if you switch tabs, minimize, and reopen the tab if it was previously locked.
+
+## Where to find the files
+- [index.html](file:///C:/Users/ChinonsoNnodebe/OneDrive%20-%20Globus%20Bank%20Limited/Desktop/Sagesleeper/index.html)
+- [styles.css](file:///C:/Users/ChinonsoNnodebe/OneDrive%20-%20Globus%20Bank%20Limited/Desktop/Sagesleeper/styles.css)
+- [script.js](file:///C:/Users/ChinonsoNnodebe/OneDrive%20-%20Globus%20Bank%20Limited/Desktop/Sagesleeper/script.js)
+
+## How to use
+Simply double-click [index.html](file:///C:/Users/ChinonsoNnodebe/OneDrive%20-%20Globus%20Bank%20Limited/Desktop/Sagesleeper/index.html) to open it in your daily web browser (Edge, Chrome, or Firefox). Click the central **"Enable Wake Lock"** button. The color indicator will turn from purple to green, and your screen will stay awake indefinitely until you disable the lock or close the page!

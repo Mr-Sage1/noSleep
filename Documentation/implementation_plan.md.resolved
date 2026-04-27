@@ -1,0 +1,35 @@
+# Goal Description
+The objective is to create a functional, modern, and aesthetically pleasing "No Sleep" single-page web application. It will utilize the browser's Screen Wake Lock API to prevent the device screen from turning off. 
+
+## User Review Required
+No major architectural decisions require review. The app will be built in the `Sagesleeper` folder on the desktop. We will use plain HTML, CSS, and JS to ensure lightweight performance.
+
+## Proposed Changes
+
+### Web App Files
+The new files will be placed in `C:/Users/ChinonsoNnodebe/OneDrive - Globus Bank Limited/Desktop/Sagesleeper`:
+
+#### [NEW] index.html
+Contains the structural components of the web app including the digital clock, status indicator, and a central toggle button. Will import Google Fonts 'Inter' or 'Outfit' for a premium look.
+
+#### [NEW] styles.css
+Implements a premium design using "glassmorphism", dynamic gradients, hover effects, and a dark mode focus out-of-the-box. Uses Vanilla CSS to ensure maximum customizability and modern web standards.
+
+#### [NEW] script.js
+Integrates the Screen Wake Lock API. 
+Key responsibilities:
+- Managing wake lock state (`navigator.wakeLock.request('screen')`).
+- Automatically reacquiring wake lock on visibility change if it was previously active.
+- Updating DOM elements corresponding to the "Locked" / "Unlocked" state.
+- Driving the live clock.
+
+## Verification Plan
+
+### Automated Tests
+Not applicable for this simple project, although we can serve it via a local Python server (`python -m http.server`) or use the browser subagent to verify the UI dynamically if needed.
+
+### Manual Verification
+- Open the application in a modern browser (Chrome/Edge/Firefox).
+- Validate the UI layout, responsive design, and CSS animations.
+- Click the "Toggle Wake Lock" button and verify that the screen will not turn off automatically according to system settings.
+- Verify the real-time clock updates accurately.

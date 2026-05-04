@@ -20,14 +20,14 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    padding: 20px;
+    padding: 2px;
     user-select: none;
 }
 
 .container {
     background: var(--card-bg);
     border: none;
-    padding: 10px 15px;
+    padding: 2px;
     width: auto;
     box-shadow: none;
 }
@@ -44,24 +44,25 @@ header {
 .status-badge {
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 0.8rem;
+    gap: 4px;
+    font-size: 0.5rem;
     color: var(--text-secondary);
     cursor: pointer;
-    padding: 6px 12px;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--card-border);
+    padding: 2px 4px;
+    border-radius: 2px;
+    background: transparent;
+    border: none;
+    opacity: 0.3;
     transition: all 0.2s;
 }
 
 .status-badge:hover {
-    background: rgba(255, 255, 255, 0.1);
+    opacity: 0.8;
 }
 
 .status-dot {
-    width: 6px;
-    height: 6px;
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
     background: #d1d5db;
 }
@@ -98,4 +99,8 @@ header {
     color: var(--error-color);
     font-size: 0.85rem;
     text-align: center;
+}
+
+.cursor-hidden, .cursor-hidden * {
+    cursor: none !important;
 }

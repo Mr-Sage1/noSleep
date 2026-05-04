@@ -9,6 +9,7 @@ const errorToast = document.getElementById('errorMessage');
 // State
 let wakeLock = null;
 let isLocked = false;
+let cursorTimeout = null;
 
 // Initialize App
 function init() {
@@ -24,6 +25,18 @@ function init() {
             await requestWakeLock();
         }
     });
+
+    // Fullscreen exit listener
+    document.addEventListener('fullscreenchange', () => {
+        if (!document.fullscreenElement && isLocked) {
+            releaseWakeLock();
+        }
+    });
+
+    // Cursor visibility listeners
+    document.addEventListener('mousemove', showCursor);
+    document.addEventListener('mousedown', showCursor);
+    document.addEventListener('keydown', showCursor);
 
     // Check API support
     if (!('wakeLock' in navigator)) {
@@ -47,6 +60,16 @@ function updateClock() {
     }
 }
 
+function showCursor() {
+    document.body.classList.remove('cursor-hidden');
+    clearTimeout(cursorTimeout);
+    if (isLocked) {
+        cursorTimeout = setTimeout(() => {
+            document.body.classList.add('cursor-hidden');
+        }, 2000);
+    }
+}
+
 // Wake Lock Functionality
 async function requestWakeLock() {
     try {
@@ -60,6 +83,13 @@ async function requestWakeLock() {
             }
         });
         
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen().catch(err => {
+                console.log(`Fullscreen err: ${err.message}`);
+            });
+        }
+        showCursor();
+        
         updateUI();
     } catch (err) {
         showError(`Err: ${err.message}`);
@@ -70,9 +100,15 @@ async function releaseWakeLock() {
     if (wakeLock !== null) {
         await wakeLock.release();
         wakeLock = null;
-        isLocked = false;
-        updateUI();
     }
+    isLocked = false;
+    
+    if (document.fullscreenElement) {
+        document.exitFullscreen().catch(err => console.log(err));
+    }
+    showCursor();
+    
+    updateUI();
 }
 
 function handleToggle() {

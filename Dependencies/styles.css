@@ -44,12 +44,12 @@ header {
 .status-badge {
     display: flex;
     align-items: center;
-    gap: 4px;
-    font-size: 0.5rem;
+    gap: 6px;
+    font-size: 0.7rem;
     color: var(--text-secondary);
     cursor: pointer;
-    padding: 2px 4px;
-    border-radius: 2px;
+    padding: 4px 8px;
+    border-radius: 3px;
     background: transparent;
     border: none;
     opacity: 0.3;
@@ -61,8 +61,8 @@ header {
 }
 
 .status-dot {
-    width: 4px;
-    height: 4px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background: #d1d5db;
 }
